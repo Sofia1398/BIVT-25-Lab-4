@@ -31,7 +31,7 @@ namespace Lab4
             int sum = 0;
 
             // code here
-            int n = 0;  
+            int n = 0;
             for (int i = 0; i < array.Length; i++)
             {
                 if (array[i] < 0)
@@ -138,8 +138,8 @@ namespace Lab4
             // code here
             if (array == null || array.Length == 0) return;
 
-            int b = 0;     
-            int c = -1;    
+            int b = 0;
+            int c = -1;
 
             for (int i = 0; i < array.Length; i++)
             {
@@ -161,14 +161,14 @@ namespace Lab4
             int[] answer = null;
 
             // code here
-            int m = array[0]; 
+            int m = array[0];
             for (int i = 1; i < array.Length; i++)
                 if (array[i] > m) m = array[i];
-            int c = 0; 
+            int c = 0;
             for (int i = 0; i < array.Length; i++)
                 if (array[i] == m) c++;
             answer = new int[c];
-            int j = 0; 
+            int j = 0;
             for (int i = 0; i < array.Length; i++)
                 if (array[i] == m) answer[j++] = i;
             // end
@@ -243,16 +243,16 @@ namespace Lab4
         {
 
             // code here
-            int n = (array.Length + 1) / 2;
-            int[] e = new int[n];
-
-            for (int i = 0; i < n; i++)
-                e[i] = array[i * 2];
-
-            Array.Sort(e);
-
-            for (int i = 0; i < n; i++)
-                array[i * 2] = e[i];
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = 2; j < array.Length; j += 2)
+                {
+                    if (array[j - 2] > array[j])
+                    {
+                        (array[j - 2], array[j]) = (array[j], array[j - 2]);
+                    }
+                }
+            }
             // end
 
         }
